@@ -42,10 +42,17 @@ def main(args):
 		nextButton = driver.find_element_by_partial_link_text('Accepted')
 		nextButton.click()
 		code_page = driver.find_element_by_tag_name("body").text
-		result = code_page[code_page.find("public class Solution"):code_page.find("Back to problem")]
-		f = open(str(args.path) + "/" + filename + ".java", 'w+')
-		f.write(result)
-		f.close
+		print code_page
+		if "Language: python" in code_page:
+			result = code_page[code_page.find("class Solution"):code_page.find("Back to problem")]
+			f = open(str(args.path) + "/" + filename + ".py", 'w+')
+			f.write(result)
+			f.close
+		if "Language: java" in code_page:
+			result = code_page[code_page.find("public class Solution"):code_page.find("Back to problem")]
+			f = open(str(args.path) + "/" + filename + ".java", 'w+')
+			f.write(result)
+			f.close
 		i = i + 1
 		if (i == len(links_to_problems)):
 			break
@@ -60,7 +67,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description='LeetCode - Google Login script.')
     parser.add_argument('email', action='store', help='email')
     parser.add_argument('password', action='store', help='password')
-    parser.add_argument('path', action='store', help='password')
+    parser.add_argument('path', action='store', help='Path to save files')
     if len(sys.argv)!=4:
         parser.print_help()
         sys.exit(1)

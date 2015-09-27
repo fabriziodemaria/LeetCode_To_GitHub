@@ -9,7 +9,7 @@ def get_links(driver):
 	total = driver.find_element_by_xpath("//*[@id='brief_stats']/p/strong").text
 	totalnumber = int(total.split(' ')[0])
 	currentnumber = 0
-	print "Problems found: " + str(totalnumber)
+	#print "Problems found: " + str(totalnumber)
 
 	ff = Select(driver.find_element_by_id("filterchosen"))
 	ff.select_by_visible_text("Solved Problems")

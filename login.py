@@ -21,37 +21,44 @@ def main(args):
 	form_textfield.send_keys(args.email)
 	nextButton = driver.find_element_by_id('next')
 	nextButton.click()
-	driver.implicitly_wait(3)
+	driver.implicitly_wait(10)
 	form_textfield2 = driver.find_element_by_id('Passwd')
 	form_textfield2.send_keys(args.password)
 	nextButton = driver.find_element_by_id('signIn')
 	nextButton.click()
 	print "Login completed..."
 	i = 0
-	driver.implicitly_wait(3)
+	driver.implicitly_wait(2000)
 	while(True):
 		driver.get("https://leetcode.com/problemset/algorithms/#")
-		driver.implicitly_wait(3)
+		driver.implicitly_wait(2000)
 		links_to_problems = get_problems_links.get_links(driver)
 		filename = links_to_problems[i].text
 		links_to_problems[i].click()
-		driver.implicitly_wait(3)
+		driver.implicitly_wait(2000)
 		nextButton = driver.find_element_by_link_text('My Submissions')
 		nextButton.click()
-		driver.implicitly_wait(3)
+		driver.implicitly_wait(2000)
 		nextButton = driver.find_element_by_partial_link_text('Accepted')
 		nextButton.click()
+		driver.implicitly_wait(2000)
 		code_page = driver.find_element_by_tag_name("body").text
-		print code_page
+		driver.implicitly_wait(2000)
 		if "Language: python" in code_page:
 			result = code_page[code_page.find("class Solution"):code_page.find("Back to problem")]
+			print result
 			f = open(str(args.path) + "/" + filename + ".py", 'w+')
 			f.write(result)
+			f.flush()
+			driver.implicitly_wait(2000)
 			f.close
 		if "Language: java" in code_page:
 			result = code_page[code_page.find("public class Solution"):code_page.find("Back to problem")]
+			print result
 			f = open(str(args.path) + "/" + filename + ".java", 'w+')
 			f.write(result)
+			driver.implicitly_wait(2000)
+			f.flush()
 			f.close
 		i = i + 1
 		if (i == len(links_to_problems)):

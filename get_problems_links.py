@@ -22,7 +22,7 @@ def get_links(driver):
 		if check.is_displayed():
 			currentnumber = currentnumber + 1
 			list_of_links.append(row.find_element_by_tag_name("a"));
-			sys.stdout.write("[ " + str(float(currentnumber)/float(totalnumber)*100)[:4] + "% ] Loading... \r")
+			sys.stdout.write("[ " + str(float(currentnumber)/float(totalnumber)*100)[:4] + "% ] Loading next problem... \r")
 			sys.stdout.flush()
 	return list_of_links
 

@@ -29,6 +29,7 @@ def main(args):
 	print "Login completed..."
 	i = 0
 	driver.implicitly_wait(2000)
+
 	while(True):
 		driver.get("https://leetcode.com/problemset/algorithms/#")
 		driver.implicitly_wait(2000)
@@ -45,7 +46,8 @@ def main(args):
 		code_page = driver.find_element_by_tag_name("body").text
 		driver.implicitly_wait(2000)
 		if "Language: python" in code_page:
-			result = code_page[code_page.find("class Solution"):code_page.find("Back to problem")]
+			result = code_page[code_page.find("class "):code_page.find("Back to problem")]
+			print "====================================\n" + filename + "\n====================================\n"
 			print result
 			f = open(str(args.path) + "/" + filename + ".py", 'w+')
 			f.write(result)
@@ -53,7 +55,8 @@ def main(args):
 			driver.implicitly_wait(2000)
 			f.close
 		if "Language: java" in code_page:
-			result = code_page[code_page.find("public class Solution"):code_page.find("Back to problem")]
+			result = code_page[code_page.find("class "):code_page.find("Back to problem")]
+			print "====================================\n" + filename + "\n====================================\n"
 			print result
 			f = open(str(args.path) + "/" + filename + ".java", 'w+')
 			f.write(result)
@@ -63,7 +66,7 @@ def main(args):
 		i = i + 1
 		if (i == len(links_to_problems)):
 			break
-
+	# TODO check resulting files' dimensions to verify errors in getting the source code
 	driver.close()
 
 def parse_args():

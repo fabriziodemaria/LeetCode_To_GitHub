@@ -99,7 +99,8 @@ def main(args):
 				f.write(result)
 				f.flush()
 				f.close()
-				f = open(folder + "text.txt", "w+")
+				f = open(folder + "requirements.txt", "w+")
+				f.write(filename + "\nFrom: " + driver.current_url + "\n\n")
 				f.write(text)
 				f.flush()
 				f.close

@@ -90,7 +90,7 @@ def main(args):
 				code_page = driver.find_element_by_tag_name("body").text
 				driver.implicitly_wait(2000)
 				result = code_page[code_page.find("class "):code_page.find("Back to problem")]
-				print "== " + str(i) + "/" + str(len(links_to_problems)) + " == " + filename
+				print "== " + str(i+1) + "/" + str(len(links_to_problems)) + " == " + filename
 				# print result
 				if "Language: python" in code_page:
 					f = open(folder + "main.py", 'w+')

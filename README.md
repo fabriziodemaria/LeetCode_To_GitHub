@@ -1,6 +1,11 @@
 # LeetCode_To_GitHub
 Python tool to search your solutions from LeetCode (https://leetcode.com/problemset/algorithms/) and transfer them to your GitHub account automagically.
 
-It is planned to add support for cron and enable a scheduled commit per day with one of the exported problems not yet uploaded on GitHub. Just to boost your streak for a while!
+#### Supported operations
+So far, the tool supports only one type of login that is Google login. Moreover, you can only download automatically your solutions for the "Algorithms" section, and only the Java and Python code.
+Let me know if you want me to add support for more scenarios.
 
-![alt tag](https://raw.githubusercontent.com/fabriziodemaria/LeetCode_To_GitHub/master/images/screen1.png)
+# HOW TO
+Clone this repository anywhere on your computer. Then navigate with the Terminal to the cloned source code and execute the following command:
+
+`python import_lc.py <you Google email> <your Google password> <destination folder for your solutions>

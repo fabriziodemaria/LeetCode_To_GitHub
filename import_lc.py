@@ -83,12 +83,12 @@ def main(args):
 				driver.implicitly_wait(2000)
 				nextButton = driver.find_element_by_link_text('My Submissions')
 				nextButton.click()
-				driver.implicitly_wait(2000)
+				driver.implicitly_wait(10000)
 				nextButton = driver.find_element_by_partial_link_text('Accepted')
 				nextButton.click()
-				driver.implicitly_wait(2000)
+				time.sleep(5)
 				code_page = driver.find_element_by_tag_name("body").text
-				driver.implicitly_wait(2000)
+				time.sleep(5)
 				result = code_page[code_page.find("class "):code_page.find("Back to problem")]
 				print "== " + str(i+1) + "/" + str(len(links_to_problems)) + " == " + filename
 				# print result

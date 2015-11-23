@@ -78,6 +78,7 @@ def main(args):
 				# Grep problem's specifications
 				problem = driver.find_element_by_xpath("/html/body/div[2]/div[1]/div[1]/div/div[3]")
 				text = str(problem.text.encode('ascii', 'ignore').decode('ascii'))
+				text = text.replace("\nSubscribe to see which companies asked this question","")
 				text = text.replace("\nShow Tags","")
 				text = text.replace("\nShow Similar Problems","")
 				driver.implicitly_wait(2000)

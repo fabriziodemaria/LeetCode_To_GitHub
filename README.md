@@ -8,4 +8,4 @@ Let me know if you want me to add support for more scenarios.
 # HOW TO
 Clone this repository anywhere on your computer. Then navigate with the Terminal to the cloned source code and execute the following command:
 
-`python import_lc.py <you Google email> <your Google password> <destination folder for your solutions>
+<pre>python import_lc.py <you Google email> <your Google password> <destination folder for your solutions></pre>

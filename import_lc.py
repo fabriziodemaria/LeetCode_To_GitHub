@@ -64,7 +64,7 @@ def main(args):
 	while(True):
 		driver.get("https://leetcode.com/problemset/algorithms/#")
 		driver.implicitly_wait(2000)
-		links_to_problems = get_problems_links.get_links(driver)
+		links_to_problems = get_links(driver)
 		while (i < len(links_to_problems)):
 			filename = links_to_problems[i].text
 			folder = str(args.path) + "/" + filename + "/"

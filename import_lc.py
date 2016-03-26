@@ -37,7 +37,7 @@ def print_links(driver):
 
 
 def main(args):
-	chromedriver = "/Users/fabriziodemaria/Downloads/chromedriver"
+	chromedriver = "<PATH_TO_CHROMEDRIVER>/chromedriver" # Set this to your chromedriver's location
 	os.environ["webdriver.chrome.driver"] = chromedriver
 	driver = webdriver.Chrome(chromedriver)
 	print "Opening LeetCode..."

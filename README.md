@@ -6,7 +6,8 @@ So far, the tool supports only one type of login that is Google login. Moreover,
 Let me know if you want me to add support for more scenarios.
 
 # HOW TO
-Set the path to your chromedriver location.
-Clone this repository anywhere on your computer. Then navigate with the Terminal to the cloned source code and execute the following command:
+- Clone this repository anywhere on your computer. 
+- Set the path to your chromedriver location.
+- Navigate with the Terminal to the cloned source code and execute the following command:
 
 <pre>python import_lc.py <you Google email> <your Google password> <destination folder for your solutions></pre>

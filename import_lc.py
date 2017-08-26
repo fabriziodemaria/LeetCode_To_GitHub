@@ -4,7 +4,6 @@ import time
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.select import Select
-import get_problems_links
 
 
 def get_links(driver):
